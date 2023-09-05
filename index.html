@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <title>SpaceX</title>
+</head>
+<body class="page">
+  <div class="background">
+    <header class="header">
+      <div class="header-content">
+        <img src="./images/logo.png" alt="Логотип" class="logo">
+        <nav class="nav-desktop">
+          <ul class="menu">
+            <li>
+              <a href="#" class="menu-link">Главная</a>
+            </li>
+            <li>
+              <a href="#" class="menu-link">Технология</a>
+            </li>
+            <li>
+              <a href="#" class="menu-link">График&#160;полетов</a>
+            </li>
+            <li>
+              <a href="#" class="menu-link">Гарантии</a>
+            </li>
+            <li>
+              <a href="#" class="menu-link">О&#160;компании</a>
+            </li>
+            <li>
+              <a href="#" class="menu-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="nav">
+          <svg class="ham hamRotate" viewBox="0 0 100 100" width="50">
+            <path
+              class="line top"
+              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+            <path
+              class="line middle"
+              d="m 30,50 h 40" />
+            <path
+              class="line bottom"
+              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+          </svg>
+          <nav class="nav-mobile">
+            <ul class="menu">
+              <li>
+                <a href="#" class="menu-link">Главная</a>
+              </li>
+              <li>
+                <a href="#" class="menu-link">Технология</a>
+              </li>
+              <li>
+                <a href="#" class="menu-link">График&#160;полетов</a>
+              </li>
+              <li>
+                <a href="#" class="menu-link">Гарантии</a>
+              </li>
+              <li>
+                <a href="#" class="menu-link">О&#160;компании</a>
+              </li>
+              <li>
+                <a href="#" class="menu-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main-title">
+        <h1 class="title"><span class="title-span">путешествие</span> на красную планету</h1>
+        <button class="main-button" type="button">Начать путешествие</button>
+      </section>
+      <img src="./images/planet.png" class="planet" alt="Планета">
+      <section class="info">
+        <ul class="info-gallery">
+          <li class="card">
+            <p class="card-text">мы <span class="card-main">1</span> на рынке</p>
+          </li>
+          <li class="card">
+            <p class="card-text">гарантируем <span class="card-main">50%</span> безопасность</p>
+          </li>
+          <li class="card">
+            <p class="card-text">календарик за <span class="card-main">2001<span class="card-main-span">г.</span></span> в подарок</p>
+          </li>
+          <li class="card">
+            <p class="card-text">путешествие <span class="card-main">597</span> дней</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <div class="popup">
+      <div class="popup-content">
+        <button type="button" class="popup-close"></button>
+        <h2 class="popup-title">Форма обратной связи</h2>
+        <form class="form" name="form" id="form" action="#">
+          <label class="form-label" for="name">Имя*</label>
+          <input type="text" name="name" id="name" class="form-input">
+          <label class="form-label" for="surname">Фамилия*</label>
+          <input type="text" name="surname" id="surname" class="form-input">
+          <label class="form-label" for="email-phone">Email или телефон*</label>
+          <input type="text" name="email-phone" id="email-phone" class="form-input email-phone">
+          <label class="form-label" for="message">Сообщение*</label>
+          <textarea class="form-input" rows="4" name="message" id="message"></textarea>
+          <span class="form-error"></span>
+          <button type="submit" class="popup-button">Отправить</button>
+        </form>
+        <div class="popup-overlay">
+          <span class="loader"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
