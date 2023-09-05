@@ -30,37 +30,27 @@ $data = [
   'message' => ''
 ];
 
-if (!empty($_POST['name'])) {
-  $data['form']['name'] = htmlspecialchars($_POST['name']);
-} else {
-  $data['result'] = 'error';
-  $data['errors']['name'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле name.');
-}
+$arr = array('name', 'surname', 'email-phone', 'message');
 
-if (!empty($_POST['surname'])) {
-  $data['form']['surname'] = htmlspecialchars($_POST['surname']);
-} else {
-  $data['result'] = 'error';
-  $data['errors']['surname'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле surname.');
+foreach ($arr as &$value) {
+  if (!empty($_POST[$value])) {
+    $data['form'][$value] = htmlspecialchars($_POST[$value]);
+  } else {
+    $data['result'] = 'error';
+    $data['errors'][$value] = 'Заполните это поле.';
+    itc_log('Не заполнено поле '.$value.'.');
+  }
+  if ($value === 'email-phone') {
+    if (!filter_var($_POST[$value], FILTER_VALIDATE_EMAIL)) {
+      if (!preg_match('/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/', $value)) {
+        $data['result'] = 'error';
+        $data['errors'][$value] = $value.' не корректный.';
+        itc_log($value.' не корректный.');
+      }
+    }
+  }
 }
-
-if (!empty($_POST['email-phone'])) {
-  $data['form']['email-phone'] = htmlspecialchars($_POST['email-phone']);
-} else {
-  $data['result'] = 'error';
-  $data['errors']['email-phone'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле email-phone.');
-}
-
-if (!empty($_POST['message'])) {
-  $data['form']['message'] = htmlspecialchars($_POST['message']);
-} else {
-  $data['result'] = 'error';
-  $data['errors']['message'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле message.');
-}
+unset($value);
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;

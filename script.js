@@ -42,7 +42,7 @@ function hideInputError(input) {
 
 function validationForm(form) {
   let error = 0;
-  const inputs = document.querySelectorAll('.form-input');
+  const inputs = form.querySelectorAll('.form-input');
 
   for (let i = 0; i < inputs.length; i++) {
     const input = inputs[i];

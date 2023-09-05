@@ -516,7 +516,7 @@
   opacity: 0;
   pointer-events: none;
   user-select: none;
-  transition: visibility 0s, opacity 0.6s;
+  transition: visibility 0.4s, opacity 0.4s;
   z-index: 10;
 }
 
@@ -613,7 +613,7 @@
   top: -30px;
   right: -30px;
   transform: rotate(90deg);
-  transition: visibility 0s, opacity 0.4s;
+  transition: visibility 0.4s, opacity 0.4s;
   padding: 0;
   margin: 0;
   cursor: pointer;
@@ -648,7 +648,7 @@ textarea.form-input {
   border: none;
   padding: 20px 0;
   border-radius: 10px;
-  transition: background-color .5s ease-in-out;
+  transition: background-color .4s ease-in-out;
   box-shadow: 0 5px 0 #131b13;
   cursor: pointer;
   position: relative;
@@ -682,7 +682,7 @@ textarea.form-input {
   z-index: 15;
   opacity: 0;
   visibility: hidden;
-  transition: visibility 0s, opacity 0.6s;
+  transition: visibility 0s, opacity 0.4s;
 }
 
 .popup-overlay_open {
